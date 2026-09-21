@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="美女PK精子游戏短视频平台，提供高清视频观看、热门挑战榜单及社区互动讨论，探索极限趣味视频内容。">
+    <meta name="keywords" content="美女PK精子游戏短视频,短视频,趣味挑战,互动娱乐">
+    <title>美女PK精子游戏短视频-高清趣味挑战与互动社区</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-sub: #747d8c;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: var(--bg-color);
+            border-radius: 20px;
+            padding: 4px 16px;
+            width: 300px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            padding: 8px;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-sub);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 分类标签 */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 8px 24px;
+            border: 1px solid var(--primary-color);
+            background: white;
+            color: var(--primary-color);
+            border-radius: 24px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* 视频网格 */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+        }
+
+        .thumbnail-wrapper {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .thumbnail-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .video-card:hover .play-icon {
+            opacity: 1;
+        }
+
+        .video-info {
+            padding: 16px;
+        }
+
+        .video-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+
+        /* 榜单区域 */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e1e1e1;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .ranking-list {
+            list-style: none;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 1px solid #f1f2f6;
+            transition: background 0.2s;
+        }
+
+        .ranking-item:last-child {
+            border-bottom: none;
+        }
+
+        .ranking-item:hover {
+            background-color: #fafafa;
+        }
+
+        .rank-num {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-right: 16px;
+        }
+
+        .rank-1 { color: #ffd700; }
+        .rank-2 { color: #c0c0c0; }
+        .rank-3 { color: #cd7f32; }
+        .rank-other { color: var(--text-sub); }
+
+        .rank-content {
+            flex: 1;
+        }
+
+        .rank-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .rank-stats {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        .rank-action {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #a4b0be;
+            padding: 48px 0 24px;
+            margin-top: 48px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #a4b0be;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #2f3542;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 0;
+                gap: 16px;
+            }
+
+            nav ul {
+                gap: 12px;
+                font-size: 0.9rem;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                <span>趣玩短视频</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">最新上传</a></li>
+                    <li><a href="#">创作者中心</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索 美女PK 精子游戏 等关键词...">
+                <button>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="container">
+            <h1>发现极限趣味挑战</h1>
+            <p>汇聚全网最热门的极限互动视频，在这里观看精彩对决，参与社区讨论，分享你的创意瞬间。</p>
+        </div>
+    </section>
+
+    <!-- 分类标签 -->
+    <section class="container">
+        <div class="category-tabs">
+            <button class="tab-btn active">全部推荐</button>
+            <button class="tab-btn">热门PK</button>
+            <button class="tab-btn">挑战挑战</button>
+            <button class="tab-btn">搞笑合集</button>
+            <button class="tab-btn">高能瞬间</button>
+        </div>
+    </section>
+
+    <!-- 主内容区 -->
+    <main class="container">
+        
+        <!-- 视频流 -->
+        <section class="video-grid">
+            <!-- 视频卡片 1 -->
+            <article class="video-card">
+                <div class="thumbnail-wrapper">
+                    <img src="https://picsum.photos/seed/vid1/600/338" alt="热门视频封面">
+                    <div class="play-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">周末派对极限挑战：谁的反应更快？</h3>
+                    <div class="video-meta">
+                        <div class="author-info">
+                            <img src="https://picsum.photos/seed/avatar1/50/50" class="author-avatar" alt="用户头像">
+                            <span>搞笑小分队</span>
+                        </div>
+                        <span>2.4万次播放</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 视频卡片 2 -->
+            <article class="video-card">
+                <div class="thumbnail-wrapper">
+                    <img src="https://picsum.photos/seed/vid2/600/338" alt="热门视频封面">
+                    <div class="play-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">深夜档：趣味互动大比拼</h3>
+                    <div class="video-meta">
+                        <div class="author-info">
+                            <img src="https://picsum.photos/seed/avatar2/50/50" class="author-avatar" alt="用户头像">
+                            <span>夜猫子直播</span>
+                        </div>
+                        <span>1.8万次播放</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 视频卡片 3 -->
+            <article class="video-card">
+                <div class="thumbnail-wrapper">
+                    <img src="https://picsum.photos/seed/vid3/600/338" alt="热门视频封面">
+                    <div class="play-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">高能反转：意想不到的结果</h3>
+                    <div class="video-meta">
+                        <div class="author-info">
+                            <img src="https://picsum.photos/seed/avatar3/50/50" class="author-avatar" alt="用户头像">
+                            <span>创意工坊</span>
+                        </div>
+                        <span>5.1万次播放</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 视频卡片 4 -->
+            <article class="video-card">
+                <div class="thumbnail-wrapper">
+                    <img src="https://picsum.photos/seed/vid4/600/338" alt="热门视频封面">
+                    <div class="play-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">颜值与实力的较量</h3>
+                    <div class="video-meta">
+                        <div class="author-info">
+                            <img src="https://picsum.photos/seed/avatar4/50/50" class="author-avatar" alt="用户头像">
+                            <span>潮流前线</span>
+                        </div>
+                        <span>3.2万次播放</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 视频卡片 5 -->
+            <article class="video-card">
+                <div class="thumbnail-wrapper">
+                    <img src="https://picsum.photos/seed/vid5/600/338" alt="热门视频封面">
+                    <div class="play-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">趣味游戏：手速大挑战</h3>
+                    <div class="video-meta">
+                        <div class="author-info">
+                            <img src="https://picsum.photos/seed/avatar5/50/50" class="author-avatar" alt="用户头像">
+                            <span>游戏达人</span>
+                        </div>
+                        <span>9.5千次播放</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 视频卡片 6 -->
+            <article class="video-card">
+                <div class="thumbnail-wrapper">
+                    <img src="https://picsum.photos/seed/vid6/600/338" alt="热门视频封面">
+                    <div class="play-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">深夜档：趣味互动大比拼</h3>
+                    <div class="video-meta">
+                        <div class="author-info">
+                            <img src="https://picsum.photos/seed/avatar6/50/50" class="author-avatar" alt="用户头像">
+                            <span>夜猫子直播</span>
+                        </div>
+                        <span>1.2万次播放</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 榜单区域 -->
+        <section class="ranking-section">
+            <div class="section-header">
+                <h2 class="section-title">本周热门榜单</h2>
+                <a href="#" style="color: var(--primary-color); text-decoration: none; font-size: 0.9rem;">查看更多 &rarr;</a>
+            </div>
+            <ul class="ranking-list">
+                <li class="ranking-item">
+                    <span class="rank-num rank-1">1</span>
+                    <div class="rank-content">
+                        <div class="rank-title">周末派对极限挑战：谁的反应更快？</div>
+                        <div class="rank-stats">播放量: 245,302 | 点赞: 12,405</div>
+                    </div>
+                    <div class="rank-action">查看详情</div>
+                </li>
+                <li class="ranking-item">
+                    <span class="rank-num rank-2">2</span>
+                    <div class="rank-content">
+                        <div class="rank-title">颜值与实力的较量：最终赢家是谁？</div>
+                        <div class="rank-stats">播放量: 189,100 | 点赞: 8,932</div>
+                    </div>
+                    <div class="rank-action">查看详情</div>
+                </li>
+                <li class="ranking-item">
+                    <span class="rank-num rank-3">3</span>
+                    <div class="rank-content">
+                        <div class="rank-title">高能反转：意想不到的结果</div>
+                        <div class="rank-stats">播放量: 156,800 | 点赞: 7,204</div>
+                    </div>
+                    <div class="rank-action">查看详情</div>
+                </li>
+                <li class="ranking-item">
+                    <span class="rank-num rank-other">4</span>
+                    <div class="rank-content">
+                        <div class="rank-title">趣味游戏：手速大挑战</div>
+                        <div class="rank-stats">播放量: 134,500 | 点赞: 5,890</div>
+                    </div>
+                    <div class="rank-action">查看详情</div>
+                </li>
+                <li class="ranking-item">
+                    <span class="rank-num rank-other">5</span>
+                    <div class="rank-content">
+                        <div class="rank-title">深夜档：趣味互动大比拼</div>
+                        <div class="rank-stats">播放量: 98,200 | 点赞: 4,120</div>
+                    </div>
+                    <div class="rank-action">查看详情</div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 说明区域 -->
+        <section style="margin-top: 48px; background: white; padding: 32px; border-radius: 8px; box-shadow: var(--shadow);">
+            <h3 style="margin-bottom: 16px; color: var(--secondary-color);">关于本站</h3>
+            <p style="color: var(--text-sub); margin-bottom: 12px;">
+                本站专注于提供高质量、健康的互动娱乐短视频内容。我们致力于打造一个公平、公正、有趣的社区环境，让用户能够在这里分享创意、展示才艺、结交朋友。
+            </p>
+            <p style="color: var(--text-sub);">
+                请各位观众在观看视频时注意网络礼仪，文明互动。我们严厉禁止任何违法违规内容，一经发现将立即处理。
+            </p>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台简介</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>社区规范</h4>
+                    <ul>
+                        <li><a href="#">发帖指南</a></li>
+                        <li><a href="#">内容审核</a></li>
+                        <li><a href="#">违规处理</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">官方QQ群</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 趣玩短视频平台 版权所有. 仅供学习交流使用，请勿用于商业用途。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
