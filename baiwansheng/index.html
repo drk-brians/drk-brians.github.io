@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白袜女生-时尚穿搭指南与风格解析</title>
+    <meta name="description" content="白袜女生专题页，提供白袜穿搭技巧、风格分类、搭配指南及潮流趋势解析。帮助女生找到最适合自己的白袜穿搭风格。">
+    <meta name="keywords" content="白袜女生, 白袜穿搭, 女生时尚, 运动袜搭配, 休闲穿搭">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #60a5fa;
+            --accent-color: #f43f5e;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --bg-body: #f9fafb;
+            --bg-card: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            padding: 8px 16px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .search-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            background-color: #dbeafe;
+            color: var(--primary-color);
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Style Categories */
+        .category-section {
+            padding: 60px 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cat-img {
+            height: 180px;
+            width: 100%;
+            background-color: #e5e7eb;
+        }
+
+        .cat-content {
+            padding: 20px;
+        }
+
+        .cat-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .cat-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Trending / Outfit Showcase */
+        .showcase-section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .outfit-card {
+            background: var(--bg-body);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .outfit-img-wrapper {
+            position: relative;
+            padding-top: 130%; /* Aspect ratio */
+        }
+
+        .outfit-img-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .outfit-info {
+            padding: 20px;
+        }
+
+        .outfit-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .outfit-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tips-section {
+            padding: 60px 0;
+        }
+
+        .tips-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .tips-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tips-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .check-icon {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 3px;
+        }
+
+        .tips-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+            background-color: #f3f4f6;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .faq-q {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: #d1d5db;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tips-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
+                <span>白袜女生</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#styles">风格分类</a></li>
+                    <li><a href="#trends">搭配趋势</a></li>
+                    <li><a href="#guide">选购指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="search-btn">搜索搭配</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索白袜女生的时尚美学</h1>
+                <p>从校园青春到街头潮流，白袜不仅是舒适的选择，更是穿搭的点睛之笔。发现属于你的独特风格。</p>
+                <div class="hero-tags">
+                    <span class="tag">#运动休闲</span>
+                    <span class="tag">#学院风</span>
+                    <span class="tag">#街头潮流</span>
+                    <span class="tag">#舒适穿搭</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Style Categories -->
+        <section id="styles" class="category-section">
+            <div class="container">
+                <h2 class="section-title">风格分类</h2>
+                <div class="category-grid">
+                    <article class="category-card">
+                        <div class="cat-img" style="background-image: url('https://picsum.photos/seed/school/400/300'); background-size: cover; background-position: center;"></div>
+                        <div class="cat-content">
+                            <h3 class="cat-title">学院风</h3>
+                            <p class="cat-desc">搭配百褶裙、格纹衬衫，展现清新自然的校园气质，经典且永不过时。</p>
+                        </div>
+                    </article>
+                    <article class="category-card">
+                        <div class="cat-img" style="background-image: url('https://picsum.photos/seed/sport/400/300'); background-size: cover; background-position: center;"></div>
+                        <div class="cat-content">
+                            <h3 class="cat-title">运动机能风</h3>
+                            <p class="cat-desc">选择高筒运动袜，配合运动卫衣或紧身裤，打造活力满满的街头感。</p>
+                        </div>
+                    </article>
+                    <article class="category-card">
+                        <div class="cat-img" style="background-image: url('https://picsum.photos/seed/casual/400/300'); background-size: cover; background-position: center;"></div>
+                        <div class="cat-content">
+                            <h3 class="cat-title">极简休闲</h3>
+                            <p class="cat-desc">简约的白色棉袜搭配牛仔裤或工装裤，随性自在，适合日常通勤。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Outfits -->
+        <section id="trends" class="showcase-section">
+            <div class="container">
+                <h2 class="section-title">热门搭配趋势</h2>
+                <div class="showcase-grid">
+                    <article class="outfit-card">
+                        <div class="outfit-img-wrapper">
+                            <img src="https://picsum.photos/seed/ootd1/600/800" alt="夏季清爽穿搭">
+                        </div>
+                        <div class="outfit-info">
+                            <h3 class="outfit-title">夏日清爽校园风</h3>
+                            <div class="outfit-meta">
+                                <span>热度: 98%</span>
+                                <span>更新: 2小时前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="outfit-card">
+                        <div class="outfit-img-wrapper">
+                            <img src="https://picsum.photos/seed/ootd2/600/800" alt="秋冬叠穿技巧">
+                        </div>
+                        <div class="outfit-info">
+                            <h3 class="outfit-title">秋冬叠穿层次感</h3>
+                            <div class="outfit-meta">
+                                <span>热度: 95%</span>
+                                <span>更新: 1天前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="outfit-card">
+                        <div class="outfit-img-wrapper">
+                            <img src="https://picsum.photos/seed/ootd3/600/800" alt="复古怀旧风">
+                        </div>
+                        <div class="outfit-info">
+                            <h3 class="outfit-title">复古怀旧氛围</h3>
+                            <div class="outfit-meta">
+                                <span>热度: 92%</span>
+                                <span>更新: 3天前</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buying Guide -->
+        <section id="guide" class="tips-section">
+            <div class="container">
+                <div class="tips-container">
+                    <div class="tips-image">
+                        <img src="https://picsum.photos/seed/shoes/600/400" alt="选购白袜指南">
+                    </div>
+                    <div class="tips-content">
+                        <h2>如何挑选适合的白袜？</h2>
+                        <p style="margin-bottom: 20px; color: var(--text-light);">白袜虽然百搭，但材质和厚度的选择对最终效果至关重要。</p>
+                        <ul class="tips-list">
+                            <li>
+                                <span class="check-icon">✔</span>
+                                <div>
+                                    <strong>材质选择：</strong> 推荐纯棉或棉混纺，透气吸汗，避免闷脚。
+                                </div>
+                            </li>
+                            <li>
+                                <span class="check-icon">✔</span>
+                                <div>
+                                    <strong>厚度考量：</strong> 夏季选择薄款，秋冬季节建议加绒或厚款以保暖。
+                                </div>
+                            </li>
+                            <li>
+                                <span class="check-icon">✔</span>
+                                <div>
+                                    <strong>长度搭配：</strong> 短袜适合运动鞋，中筒袜适合板鞋和帆布鞋，高筒袜能拉长腿部线条。
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">常见问题解答</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-q">白袜容易变黄怎么清洗？</div>
+                        <div class="faq-a">建议使用冷洗液或专门的衣物增白剂。清洗后避免暴晒，自然晾干或反面晾晒可减少氧化发黄。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">什么鞋子适合搭配白袜？</div>
+                        <div class="faq-a">帆布鞋、板鞋、运动鞋都是绝佳拍档。乐福鞋和马丁靴搭配中筒白袜也是近年流行的穿法。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">如何保持白袜一整天干净？</div>
+                        <div class="faq-a">选择有裆部的长筒袜，并注意鞋内卫生。如果脚汗较多，可使用吸汗鞋垫。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">不同肤色的女生适合什么样的白袜？</div>
+                        <div class="faq-a">肤色较深的女生可以选择带有淡淡灰调的白色，避免纯白过于刺眼；肤色较浅的女生则可以选择纯白。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>白袜女生</h3>
+                    <p style="font-size: 0.9rem; color: #9ca3af; line-height: 1.8;">
+                        专注于分享女生白袜穿搭技巧与时尚资讯，打造最实用的穿搭参考平台。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">品牌故事</a></li>
+                        <li><a href="#">编辑团队</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>穿搭指南</h4>
+                    <ul>
+                        <li><a href="#">夏季搭配</a></li>
+                        <li><a href="#">冬季保暖</a></li>
+                        <li><a href="#">配饰推荐</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">小红书</a></li>
+                        <li><a href="#">微博</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 白袜女生时尚指南 版权所有. 本站内容仅供学习交流参考。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
