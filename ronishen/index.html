@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RO逆渗透水处理技术全面指南：从原理介绍、设备选购、安装维护到常见问题解答。为您提供专业的纯净水解决方案与滤芯更换建议。">
+    <meta name="keywords" content="RO逆渗透, 反渗透, 净水器, RO膜, 水质检测, 纯净水">
+    <title>RO逆渗透-专业反渗透净水技术指南与设备选购</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #007AFF;
+            --primary-dark: #0056b3;
+            --secondary-color: #00C853;
+            --bg-color: #f8f9fa;
+            --text-main: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary-dark);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        /* Intro Grid */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .intro-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .intro-visual {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .intro-visual img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #e3f2fd;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 4rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .check { color: var(--secondary-color); }
+        .cross { color: #ff5252; }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Maintenance Steps */
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+            padding: 0 10px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        .step h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: var(--white);
+            padding: 3rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .intro-grid, .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .steps-container::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                <span>RO逆渗透</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#principle">工作原理</a></li>
+                    <li><a href="#comparison">优缺点</a></li>
+                    <li><a href="#guide">选购指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">咨询专家</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>RO逆渗透：纯净生活的技术基石</h1>
+            <p>深入了解反渗透（Reverse Osmosis）净水技术，探索其如何通过高压迫使水分子穿透半透膜，有效去除水中的重金属、细菌和杂质，为您提供安全健康的饮用水。</p>
+            <div class="hero-tags">
+                <span class="tag">重金属去除</span>
+                <span class="tag">TDS降低</span>
+                <span class="tag">细菌拦截</span>
+            </div>
+            <a href="#principle" class="cta-btn" style="font-size: 1.1rem; padding: 0.8rem 2rem;">了解原理</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Introduction Section -->
+        <section id="principle" class="intro-grid">
+            <div class="intro-text">
+                <h3>什么是RO逆渗透技术？</h3>
+                <p>RO是Reverse Osmosis（反渗透）的缩写。这是一种基于压力驱动的水处理技术，其核心原理是利用半透膜的选择性。在自然状态下，水分子会从低浓度向高浓度一侧渗透，而RO技术则通过施加高于渗透压的压力，迫使水分子从高浓度溶液（原水）中穿过致密的RO膜，流向低浓度一侧（纯水）。</p>
+                <p>这意味着，水中的溶解固体、细菌、病毒、有机物以及大部分重金属离子都会被截留在RO膜的一侧，只有纯净的水分子能够通过，从而获得高纯度的饮用水。</p>
+            </div>
+            <div class="intro-visual">
+                <img src="https://picsum.photos/seed/ro-tech/600/400" alt="RO反渗透膜过滤原理示意图" loading="lazy">
+                <p style="font-size: 0.85rem; color: #666; margin-top: 1rem;">图示：RO膜过滤原理示意</p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section-header">
+            <h2>RO系统的核心优势</h2>
+            <p>为什么选择RO逆渗透作为家庭和工业净水的主流方案？</p>
+        </section>
+
+        <div class="features-grid">
+            <article class="feature-card">
+                <div class="feature-icon">💧</div>
+                <h3>高效脱盐</h3>
+                <p>RO膜通常能去除95%以上的溶解性固体（TDS），将TDS值降低至10mg/L以下，口感甘甜，适合直接饮用。</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>全面过滤</h3>
+                <p>不仅能去除氯气、异味，还能有效拦截细菌、大肠杆菌、铅、汞、砷等有害重金属离子。</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">🌱</div>
+                <h3>保留矿物质</h3>
+                <p>现代RO系统通常配备后置活性炭滤芯，在净化水质的同时，能够吸附异味并改善口感，保留人体所需的微量矿物质。</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>节能省水</h3>
+                <p>新一代无桶RO净水器采用高压泵和智能水路设计，废水比通常可达1:1甚至更高，实现水资源的有效回收利用。</p>
+            </article>
+        </div>
+
+        <!-- Comparison Section -->
+        <section id="comparison" class="comparison-section">
+            <div class="section-header">
+                <h2>RO逆渗透 vs 其他净水技术</h2>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>对比项目</th>
+                        <th>RO逆渗透 (RO)</th>
+                        <th>超滤 (UF)</th>
+                        <th>活性炭吸附</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>过滤精度</td>
+                        <td class="check">0.0001微米 (极高)</td>
+                        <td>0.01-0.1微米 (中等)</td>
+                        <td>0.1微米 (低)</td>
+                    </tr>
+                    <tr>
+                        <td>去除杂质</td>
+                        <td class="check">重金属、细菌、病毒、水垢</td>
+                        <td>悬浮物、胶体、部分细菌</td>
+                        <td>余氯、异味、色素</td>
+                    </tr>
+                    <tr>
+                        <td>能否直饮</td>
+                        <td class="check">是 (需烧开)</td>
+                        <td>否 (建议烧开)</td>
+                        <td>否</td>
+                    </tr>
+                    <tr>
+                        <td>废水产生</td>
+                        <td class="check">有 (需排放废水)</td>
+                        <td>无 (0废水)</td>
+                        <td>无</td>
+                    </tr>
+                    <tr>
+                        <td>口感</td>
+                        <td class="check">纯净、甘甜</td>
+                        <td>较接近原水</td>
+                        <td>改善口感</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Installation Steps -->
+        <section class="section-header">
+            <h2>RO净水器安装与维护流程</h2>
+        </section>
+
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h4>位置选择</h4>
+                <p>建议安装在厨房水槽下方或阳台，确保有电源接口和自来水进水口，并预留排水管位置。</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h4>安装滤芯</h4>
+                <p>按照说明书顺序安装PP棉、前置活性炭、RO膜和后置活性炭滤芯，注意密封圈是否安装到位。</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h4>通水测试</h4>
+                <p>安装完成后进行首次通水冲洗，排出膜壳内的保护液和空气，并检查是否有漏水现象。</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h4>定期维护</h4>
+                <p>PP棉和前置炭建议3个月更换一次，RO膜建议1-2年更换，后置炭建议6-12个月更换。</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-header">
+            <h2>常见问题解答</h2>
+        </section>
+
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4>RO净水器出来的水为什么有味道？</h4>
+                <p>如果RO膜失效，原水中的矿物质和有机物会穿透膜孔，导致口感变差。此外，如果后置活性炭未及时更换，也会产生异味。</p>
+            </div>
+            <div class="faq-item">
+                <h4>RO反渗透需要一直通电吗？</h4>
+                <p>是的，RO膜过滤过程需要高压泵持续工作，因此机器必须通电。但纯水储水桶满水后，机器会自动停止工作以节省电能。</p>
+            </div>
+            <div class="faq-item">
+                <h4>RO膜堵塞了怎么办？</h4>
+                <p>RO膜堵塞通常是由于水质过硬或长期未清洗造成的。可以尝试使用专业的RO膜清洗剂进行清洗，如果清洗无效则需更换新膜。</p>
+            </div>
+            <div class="faq-item">
+                <h4>纯水可以用来浇花或洗菜吗？</h4>
+                <p>完全可以。RO纯水不含矿物质，不会导致土壤板结，且不含有害细菌，是浇花和洗菜的优质水源。</p>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <section id="contact" style="background-color: var(--primary-color); color: white; padding: 3rem; border-radius: var(--border-radius); text-align: center; margin-bottom: 4rem;">
+            <h2 style="margin-bottom: 1rem;">获取您的专属净水方案</h2>
+            <p style="margin-bottom: 2rem; opacity: 0.9;">我们的技术专家为您提供从水质检测到设备选型的全方位咨询服务。</p>
+            <button class="cta-btn" style="background-color: var(--white); color: var(--primary-color); font-size: 1.1rem;">联系客服</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>RO逆渗透指南</h4>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">致力于提供最专业、最透明的反渗透净水技术知识普及与服务。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#principle">工作原理</a></li>
+                    <li><a href="#comparison">技术对比</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>服务支持</h4>
+                <ul>
+                    <li><a href="#">安装服务</a></li>
+                    <li><a href="#">滤芯更换</a></li>
+                    <li><a href="#">水质检测</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 RO逆渗透技术服务中心. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
