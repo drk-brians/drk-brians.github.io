@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="簧色视频 - 专业成人视频内容聚合平台，提供高清影视资源、在线观看及社区交流服务。">
+    <meta name="keywords" content="簧色视频,成人视频,高清影视,在线观看">
+    <title>簧色视频-高清影视资源与在线观看指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-body: #0a0a0a;
+            --bg-card: #141414;
+            --bg-card-hover: #1f1f1f;
+            --text-main: #ffffff;
+            --text-sub: #a0a0a0;
+            --accent-color: #d4af37;
+            --accent-hover: #f5c559;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+            --header-height: 60px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid #333;
+            height: var(--header-height);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-login {
+            padding: 6px 16px;
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .btn-login:hover {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 100%), 
+                        url('https://picsum.photos/seed/nightlife/1200/400.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50px;
+            padding: 5px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .search-bar input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-bar button {
+            background: var(--accent-color);
+            border: none;
+            color: #000;
+            padding: 0 25px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-bar button:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            width: 100%;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px;
+            flex: 1;
+        }
+
+        /* Sidebar */
+        aside .sidebar-section {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        aside h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .category-list a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        /* Content Area */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 1.4rem;
+        }
+
+        .section-header a {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card-thumb {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .card-thumb img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .play-icon::after {
+            content: '';
+            width: 0; 
+            height: 0; 
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 8px solid #fff;
+            margin-left: 3px;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        .tag {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--accent-color);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            border-top: 1px solid #333;
+            padding: 40px 0;
+            margin-top: auto;
+            color: var(--text-sub);
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .header-actions {
+                display: none;
+            }
+
+            .hero {
+                height: 300px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">簧色<span>视频</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">分类浏览</a></li>
+                    <li><a href="#">高清专区</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn-login">登录 / 注册</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索无限视界<br>发现精彩内容</h1>
+            <p>提供海量高清影视资源，满足您多样化的观看需求。随时随地，畅享极致视听体验。</p>
+            <form class="search-bar" onsubmit="event.preventDefault();">
+                <input type="text" placeholder="搜索您感兴趣的内容...">
+                <button type="submit">搜索</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="main-layout">
+        <aside>
+            <div class="sidebar-section">
+                <h3>热门分类</h3>
+                <ul class="category-list">
+                    <li><a href="#">欧美高清 <span>(12k)</span></a></li>
+                    <li><a href="#">日韩专区 <span>(8.5k)</span></a></li>
+                    <li><a href="#">亚洲精选 <span>(6.2k)</span></a></li>
+                    <li><a href="#">动漫同人 <span>(4.1k)</span></a></li>
+                    <li><a href="#">中文字幕 <span>(3.9k)</span></a></li>
+                    <li><a href="#">VR全景 <span>(2.3k)</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>本周排行</h3>
+                <ul class="category-list">
+                    <li><a href="#">《深夜食堂》最新集数</a></li>
+                    <li><a href="#">《都市传说》高清重制版</a></li>
+                    <li><a href="#">《周末派对》番外篇</a></li>
+                    <li><a href="#">《办公室秘密》完整版</a></li>
+                    <li><a href="#">《夜色撩人》4K修复</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main>
+            <section class="content-area">
+                <div class="section-header">
+                    <h2>最新推荐</h2>
+                    <a href="#">查看更多 &gt;</a>
+                </div>
+                <div class="video-grid">
+                    <!-- Video Card 1 -->
+                    <article class="video-card">
+                        <div class="card-thumb">
+                            <img src="https://picsum.photos/seed/vid1/400/225" alt="Video Thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">都市夜归人的故事</h3>
+                            <div class="card-meta">
+                                <span class="tag">4K</span>
+                                <span>2小时前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 2 -->
+                    <article class="video-card">
+                        <div class="card-thumb">
+                            <img src="https://picsum.photos/seed/vid2/400/225" alt="Video Thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">夏日海滩派对</h3>
+                            <div class="card-meta">
+                                <span class="tag">HD</span>
+                                <span>5小时前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 3 -->
+                    <article class="video-card">
+                        <div class="card-thumb">
+                            <img src="https://picsum.photos/seed/vid3/400/225" alt="Video Thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">办公室的秘密</h3>
+                            <div class="card-meta">
+                                <span class="tag">高清</span>
+                                <span>1天前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 4 -->
+                    <article class="video-card">
+                        <div class="card-thumb">
+                            <img src="https://picsum.photos/seed/vid4/400/225" alt="Video Thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">深夜食堂番外篇</h3>
+                            <div class="card-meta">
+                                <span class="tag">4K</span>
+                                <span>1天前</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="content-area" style="margin-top: 40px;">
+                <div class="section-header">
+                    <h2>高清精选</h2>
+                    <a href="#">查看更多 &gt;</a>
+                </div>
+                <div class="video-grid">
+                    <article class="video-card">
+                        <div class="card-thumb">
+                            <img src="https://picsum.photos/seed/vid5/400/225" alt="Video Thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">浪漫周末</h3>
+                            <div class="card-meta">
+                                <span class="tag">8K</span>
+                                <span>2天前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="video-card">
+                        <div class="card-thumb">
+                            <img src="https://picsum.photos/seed/vid6/400/225" alt="Video Thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">VR体验日记</h3>
+                            <div class="card-meta">
+                                <span class="tag">VR</span>
+                                <span>3天前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="video-card">
+                        <div class="card-thumb">
+                            <img src="https://picsum.photos/seed/vid7/400/225" alt="Video Thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">经典回顾</h3>
+                            <div class="card-meta">
+                                <span class="tag">修复</span>
+                                <span>1周前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="video-card">
+                        <div class="card-thumb">
+                            <img src="https://picsum.photos/seed/vid8/400/225" alt="Video Thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">全新系列</h3>
+                            <div class="card-meta">
+                                <span class="tag">HD</span>
+                                <span>1周前</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">
+                    簧色视频致力于为用户提供最优质的影视内容聚合服务。我们尊重版权，致力于打造安全、健康的观看环境。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">网站地图</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">用户协议</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>客服邮箱: support@example.com</li>
+                    <li>工作时间: 9:00 - 22:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 簧色视频. All Rights Reserved. 本站内容仅供交流学习，请勿传播。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
