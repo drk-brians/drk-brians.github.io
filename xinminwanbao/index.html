@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="新民晚报官方联系电话查询页面，提供新闻热线、读者服务部、报业集团总机及各分部联系方式，方便市民咨询与投稿。">
+    <meta name="keywords" content="新民晚报电话, 新民晚报热线, 新民晚报读者服务, 新民晚报联系方式, 新民晚报总机">
+    <title>新民晚报电话-官方联系方式与服务热线</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c8102e; /* 新民晚报红 */
+            --secondary-color: #1a1a1a;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-radius: 8px;
+            --spacing: 20px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        .main-nav a {
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .main-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #c8102e 0%, #8a0a1f 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Grid */
+        .main-content {
+            padding: 40px 0;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Info Cards */
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 5px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 3px solid transparent;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-top-color: var(--primary-color);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(200, 16, 46, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .card-desc {
+            color: var(--text-sub);
+            font-size: 14px;
+            margin-bottom: 20px;
+            min-height: 40px;
+        }
+
+        .phone-list li {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 8px;
+        }
+
+        .phone-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .phone-number {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .phone-number:hover {
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* Sidebar */
+        aside .info-box {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .info-box h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        .tips-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        .tips-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #999;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            .main-nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+                <span>新民晚报</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">新闻</a></li>
+                    <li><a href="#">民生</a></li>
+                    <li><a href="#">社区</a></li>
+                    <li><a href="#">读者服务</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>新民晚报电话</h1>
+            <p>为您提供官方新闻热线、读者服务部及各分部联系方式，欢迎致电咨询或提供新闻线索。</p>
+        </div>
+    </section>
+
+    <main class="container main-content">
+        <!-- 左侧主要内容区 -->
+        <section class="contact-section">
+            <div class="section-title">
+                <span>官方联系电话</span>
+                <span style="font-size: 14px; font-weight: normal; color: #666;">24小时服务</span>
+            </div>
+
+            <div class="contact-grid">
+                <!-- 热线卡片 -->
+                <article class="contact-card">
+                    <div class="card-header">
+                        <div class="card-icon">1</div>
+                        <div class="card-title">新闻热线</div>
+                    </div>
+                    <p class="card-desc">接收市民提供的突发新闻线索、社会监督及互动反馈。工作时间全天候值守。</p>
+                    <ul class="phone-list">
+                        <li>
+                            <span class="phone-number">021-62182166</span>
+                            <span>报料电话</span>
+                        </li>
+                        <li>
+                            <span class="phone-number">021-62182188</span>
+                            <span>新闻热线</span>
+                        </li>
+                        <li>
+                            <span class="phone-number">021-62182199</span>
+                            <span>夜线电话</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 读者服务卡片 -->
+                <article class="contact-card">
+                    <div class="card-header">
+                        <div class="card-icon">2</div>
+                        <div class="card-title">读者服务部</div>
+                    </div>
+                    <p class="card-desc">处理读者来信、建议、投诉及订阅咨询。关注民生，服务大众。</p>
+                    <ul class="phone-list">
+                        <li>
+                            <span class="phone-number">021-62182111</span>
+                            <span>读者服务</span>
+                        </li>
+                        <li>
+                            <span class="phone-number">021-62182222</span>
+                            <span>订报热线</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 投诉与监督卡片 -->
+                <article class="contact-card">
+                    <div class="card-header">
+                        <div class="card-icon">3</div>
+                        <div class="card-title">监督与投诉</div>
+                    </div>
+                    <p class="card-desc">针对新闻不实、内容失实或服务态度问题进行受理与核实。</p>
+                    <ul class="phone-list">
+                        <li>
+                            <span class="phone-number">021-62182133</span>
+                            <span>监督电话</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 报业集团 -->
+                <article class="contact-card">
+                    <div class="card-header">
+                        <div class="card-icon">4</div>
+                        <div class="card-title">报业集团总机</div>
+                    </div>
+                    <p class="card-desc">总机转接各部门，包括广告部、发行部及行政办公区。</p>
+                    <ul class="phone-list">
+                        <li>
+                            <span class="phone-number">021-62182100</span>
+                            <span>集团总机</span>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- 右侧侧边栏 -->
+        <aside>
+            <div class="info-box">
+                <h3>常见问题 (FAQ)</h3>
+                <div class="faq-item">
+                    <div class="faq-question">如何联系新民晚报刊登寻人启事？</div>
+                    <div class="faq-answer">请拨打读者服务部电话 021-62182111，提供详细资料并说明用途。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">报纸丢失或漏订如何处理？</div>
+                    <div class="faq-answer">可致电 021-62182222 或前往当地邮局咨询补订或补发事宜。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">新闻热线的工作时间？</div>
+                    <div class="faq-answer">全天候 24 小时开通，确保市民随时能反映情况。</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>温馨提示</h3>
+                <ul class="tips-list">
+                    <li>拨打时请保持线路畅通，工作人员会尽快接听。</li>
+                    <li>提供新闻线索时，请尽量准确描述事件发生的时间、地点和人物。</li>
+                    <li>涉及个人隐私或敏感信息，建议通过信件或官网留言板提交。</li>
+                    <li>如遇占线，请稍后再拨或尝试其他分机号码。</li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">新民晚报简介</a></li>
+                        <li><a href="#">媒体报道</a></li>
+                        <li><a href="#">招聘信息</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">广告服务</a></li>
+                        <li><a href="#">发行热线</a></li>
+                        <li><a href="#">版权声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">客户端下载</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 新民晚报 版权所有 | 上海报业集团</p>
+                <p style="font-size: 12px; margin-top: 5px; color: #666;">本页面仅提供电话号码展示，非官方网站，请认准官方渠道。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
